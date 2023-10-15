@@ -1,0 +1,8 @@
+<nav>
+   <p-button label="Log out" (onClick)="logOut()"></p-button>
+
+  <ul>
+    <li *ssgAdmin="true"><a [routerLink]="['/main']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Users</a></li>
+    <li><a routerLinkActive="active"  [routerLink]="['/main','tasks']">Tasks</a></li>
+  </ul>
+</nav>

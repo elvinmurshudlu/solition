@@ -1,0 +1,56 @@
+<div class="task-container">
+  <div class="task-table">
+    <div  class="d-flex gap-2">
+      <p-button label="All tasks" (onClick)="getTask()"></p-button>
+      <p-button *ssgAdmin="false" (onClick)="getMyTask()" label="My tasks"></p-button>
+      <p-button *ssgAdmin="true" label="Add task" (onClick)="showModal()"></p-button>
+    </div>
+    <p-table [value]="tasks" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Deadline</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-task>
+        <tr>
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.deadline }}</td>
+          <td>{{ task.status }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+
+<p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+      <form [formGroup]="addTaskForm">
+        <label>
+          Select users:
+          <p-multiSelect [options]="users" formControlName="users" optionLabel="email"></p-multiSelect>
+        </label>
+        <label>
+          Title:
+          <input formControlName="title" type="text">
+        </label>
+        <label>
+          Description:
+          <input formControlName="description" type="text">
+        </label>
+        <label>
+          Deadline:
+          <input formControlName="deadline" type="text">
+        </label>
+        <label>
+          Status:
+          <input formControlName="status" type="text">
+        </label>
+
+
+        <p-button (onClick)="addTask()" label="Add task"></p-button>
+      </form>
+</p-dialog>
