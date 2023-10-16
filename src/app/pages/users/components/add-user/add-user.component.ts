@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ServerService} from "../../../../services/server/server.service";
 import {AuthService} from "../../../../services/auth/auth.service";
 import {take} from "rxjs";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'ssg-add-user',
@@ -20,11 +21,14 @@ export class AddUserComponent {
     'name':new FormControl('',[Validators.required]),
   })
 
-  constructor(private server:ServerService,private auth:AuthService) {
+  constructor(private server:ServerService,private auth:AuthService , private messageService: MessageService) {
   }
 
   addUser(){
-    if(!this.addUserForm.valid) return
+    if(!this.addUserForm.valid) {
+      this.messageService.add({ severity: 'error', summary: 'Fill',  });
+      return
+    }
 
 
 

@@ -9,6 +9,9 @@ import {DialogModule} from "primeng/dialog";
 import {MultiSelectModule} from "primeng/multiselect";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminDirectiveModule} from "../../shared/admin-directive/admin-directive.module";
+import {CalendarModule} from "primeng/calendar";
+import {InputTextModule} from "primeng/inputtext";
+import {DatePipeModule} from "../../shared/date-pipe/date-pipe.module";
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import {AdminDirectiveModule} from "../../shared/admin-directive/admin-directive
     MultiSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminDirectiveModule
+    AdminDirectiveModule,
+    CalendarModule,
+    InputTextModule,
+    DatePipeModule
   ]
 })
 export class TasksModule { }

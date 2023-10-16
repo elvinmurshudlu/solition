@@ -14,7 +14,7 @@ import { Injectable} from "@angular/core";
   providedIn:"root"
 })
 
-export class AuthGuardGuard implements CanActivate{
+export class AdminGuardGuard implements CanActivate{
   constructor(private authServ:AuthService,private router:Router) {
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree  {
@@ -22,11 +22,11 @@ export class AuthGuardGuard implements CanActivate{
     // return true
 
     return new Observable<boolean>(observer=>{
-       this.authServ.user.subscribe(user=>{
-        if(user){
+      this.authServ.user.subscribe(user=>{
+        if(user && user.isAdmin){
           observer.next(true)
         }else{
-          this.router.navigate(['/'])
+          this.router.navigate(['/main','tasks'])
 
           observer.next(false)
         }

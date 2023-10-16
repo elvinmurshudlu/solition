@@ -13,11 +13,11 @@ export class MainComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.auth.user.subscribe(user=>{
-      if(user && user.isAdmin) return
-
-      this.router.navigate(['/main','tasks'])
-    })
+    // this.auth.user.subscribe(user=>{
+    //   if(user && user.isAdmin) return
+    //
+    //   this.router.navigate(['/main','tasks'])
+    // })
   }
 
 }

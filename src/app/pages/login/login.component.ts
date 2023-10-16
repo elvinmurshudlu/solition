@@ -12,6 +12,9 @@ import {AuthService} from "../../services/auth/auth.service";
 })
 export class LoginComponent  {
 
+  createSubmitted = false
+  loginSubmitted = false
+
   formGroup : FormGroup = new FormGroup({
     'organization-name':new FormControl('',[Validators.required]),
     'phone-number':new FormControl('',[Validators.required]),
@@ -33,7 +36,10 @@ export class LoginComponent  {
 
 
   createOrganization(){
-    if(!this.formGroup.valid) return
+    if(!this.formGroup.valid) {
+      this.createSubmitted = true
+      return
+    }
     const userDetails = this.formGroup.value as IRegister
 
     this.authServ.register(userDetails)
@@ -42,7 +48,10 @@ export class LoginComponent  {
   }
 
   login(){
-    if(!this.formLogin.valid) return
+    if(!this.formLogin.valid) {
+      this.loginSubmitted = true
+      return
+    }
     const userLoginDetail = this.formLogin.value as ILogin
 
     this.authServ.login(userLoginDetail)

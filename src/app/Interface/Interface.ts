@@ -30,7 +30,7 @@ export interface  ITask{
   title:string,
   description:string,
   status:string,
-  deadline:string,
+  deadline:any,
   users?:IAdminsUser[]
 }
 

@@ -1,19 +1,19 @@
 <form [formGroup]="addUserForm">
   <label>
     Name:
-    <input formControlName="name" type="text">
+    <input pInputText formControlName="name" type="text">
   </label>
   <label>
     Surname:
-    <input formControlName="surname" type="text">
+    <input pInputText formControlName="surname" type="text">
   </label>
   <label>
     Email:
-    <input formControlName="email" type="text">
+    <input pInputText formControlName="email" type="text">
   </label>
   <label>
     Password
-    <input formControlName="password" type="text">
+    <input pInputText formControlName="password" type="text">
   </label>
 
   <p-button label="Add user" (onClick)="addUser()"></p-button>

@@ -1,40 +1,39 @@
 <div class="login-container">
   <div class="login-field">
     <p-tabView>
-
       <p-tabPanel header="Register">
         <form [formGroup]="formGroup" >
 
-          <label>
+          <label >
             Organization Name:
-            <input formControlName="organization-name" type="text">
+            <input pInputText  formControlName="organization-name" type="text">
           </label>
 
           <label>
             Phone number:
-            <input formControlName="phone-number" type="text">
+            <input pInputText  formControlName="phone-number" type="text">
           </label>
 
           <label>
             Address
-            <input formControlName="address" type="text">
+            <input pInputText formControlName="address" type="text">
           </label>
 
           <label>
             Username:
-            <input formControlName="username" type="text">
+            <input pInputText formControlName="username" type="text">
           </label>
 
           <label>
             Email:
-            <input formControlName="email" type="text">
+            <input pInputText formControlName="email" type="text">
           </label>
           <label>
             Password:
-            <input formControlName="password" type="text">
+            <input pInputText formControlName="password" type="text">
           </label>
 
-          <button (click)="createOrganization()">Create Organization</button>
+          <p-button (click)="createOrganization()">Create Organization</p-button>
         </form>
       </p-tabPanel>
       <p-tabPanel header="Login">
@@ -42,14 +41,14 @@
 
           <label>
             Email:
-            <input formControlName="email" type="text">
+            <input pInputText formControlName="email" type="text">
           </label>
           <label>
             Password:
-            <input formControlName="password" type="text">
+            <input pInputText formControlName="password" type="text">
           </label>
 
-          <button (click)="login()">Login</button>
+          <p-button (onClick)="login()">Login</p-button>
         </form>
       </p-tabPanel>
     </p-tabView>
