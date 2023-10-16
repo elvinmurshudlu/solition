@@ -4,6 +4,7 @@ import {ServerService} from "../../services/server/server.service";
 import {ILogin, IRegister} from "../../Interface/Interface";
 import {Router} from "@angular/router";
 import {AuthService} from "../../services/auth/auth.service";
+import {IFormLabel} from "../../shared/forms/forms.component";
 
 @Component({
   selector: 'ssg-login',
@@ -31,6 +32,20 @@ export class LoginComponent  {
 
 
   })
+
+
+  labels :IFormLabel[]= [
+    {
+      label:'Email',
+      formControlName:'email',
+      type:'input'
+    },
+    {
+      label:'Password',
+      formControlName:'password',
+      type:'input'
+    },
+  ]
   constructor(private server :ServerService,private router:Router,private authServ:AuthService) {
   }
 

@@ -1,0 +1,21 @@
+<form [formGroup]="formGroup">
+  <label *ngFor="let label of formLabels">
+    {{label.label}}
+    <ng-container *ngIf="label.type=='input'">
+      <input  pInputText [formControlName]="label.formControlName" type="text">
+
+    </ng-container>
+    <ng-container *ngIf="label.type=='select'">
+      <p-multiSelect appendTo="body"  [formControlName]="label.formControlName" optionLabel="email"></p-multiSelect>
+
+
+    </ng-container>
+    <ng-container *ngIf="label.type=='date'">
+      <p-calendar dateFormat="dd.mm.yy" appendTo="body" [formControlName]="label.formControlName" ></p-calendar>
+
+
+    </ng-container>
+
+  </label>
+
+</form>

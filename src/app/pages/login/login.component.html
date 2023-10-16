@@ -37,19 +37,21 @@
         </form>
       </p-tabPanel>
       <p-tabPanel header="Login">
-        <form [formGroup]="formLogin" >
+<!--        <form [formGroup]="formLogin" >-->
 
-          <label>
-            Email:
-            <input pInputText formControlName="email" type="text">
-          </label>
-          <label>
-            Password:
-            <input pInputText formControlName="password" type="text">
-          </label>
+<!--          <label>-->
+<!--            Email:-->
+<!--            <input pInputText formControlName="email" type="text">-->
+<!--          </label>-->
+<!--          <label>-->
+<!--            Password:-->
+<!--            <input pInputText formControlName="password" type="text">-->
+<!--          </label>-->
 
-          <p-button (onClick)="login()">Login</p-button>
-        </form>
+<!--          <p-button (onClick)="login()">Login</p-button>-->
+<!--        </form>-->
+
+        <ssg-forms [formLabels]="labels"></ssg-forms>
       </p-tabPanel>
     </p-tabView>
 
